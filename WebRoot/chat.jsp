@@ -40,6 +40,8 @@
 			websocket.send(input.value);
 			alert("send");
 		};
+		//断开连接
+		//websocket.close();
 	</script>
 </body>
 </html>

@@ -9,8 +9,8 @@ public class MySocketServlet extends WebSocketServlet{
 
 	@Override
 	protected StreamInbound createWebSocketInbound(String arg0,
-			HttpServletRequest arg1) {
-		return new MyMessageInbound();
+			HttpServletRequest req) {
+		return new MyMessageInbound(req.getSession());
 	}
 
 }

@@ -6,12 +6,19 @@ import java.nio.CharBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.apache.catalina.websocket.MessageInbound;
 import org.apache.catalina.websocket.WsOutbound;
 
 public class MyMessageInbound extends MessageInbound {
 	private  List<MyMessageInbound> mmiList = new ArrayList<MyMessageInbound>();
 	WsOutbound out;
+	private HttpSession session;
+
+	public MyMessageInbound(HttpSession session) {
+		this.session=session;
+	}
 
 	@Override
 	protected void onBinaryMessage(ByteBuffer arg0) throws IOException {
@@ -20,9 +27,8 @@ public class MyMessageInbound extends MessageInbound {
 
 	@Override
 	protected void onTextMessage(CharBuffer arg0) throws IOException {
-		System.out.println("accept text msg:"+arg0.toString());
 		for(MyMessageInbound mm : mmiList){
-			CharBuffer wrap = CharBuffer.wrap(arg0);
+			CharBuffer wrap = CharBuffer.wrap(session.getId()+":"+arg0);
 			mm.out.writeTextMessage(wrap);
 			mm.out.flush();
 		}
