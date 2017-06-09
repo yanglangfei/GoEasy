@@ -28,9 +28,51 @@
 	height: 500px;
 	border: 1px solid red;
 }
+
+img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#img1{
+  border: 1px solid red;
+}
+
+#img2{
+  border: 1px solid yellow;
+}
+
+#img3{
+  border: 1px solid #ff00ff;
+}
+
+#img4{
+  border: 1px solid #00ff00;
+}
+
+#img5{
+  border: 1px solid #0000ff;
+}
+
+#img6{
+  border: 1px solid #eeff00;
+}
+
+#img7{
+  border: 1px solid #ffeecc;
+}
 </style>
 </head>
 <body>
+	<img id="img1" alt="" src="images/skin2.jpg">
+	<img id="img2" alt="" src="images/skin3.jpg">
+	<img id="img3" alt="" src="images/skin4.jpg">
+	<img id="img4" alt="" src="images/skin5.jpg">
+	<img id="img5" alt="" src="images/skin6.jpg">
+	<img id="img6" alt="" src="images/skin7.jpg">
+	<img id="img7" alt="" src="images/icon.png">
 	<h2>接受消息</h2>
 	<button onclick="cancelSun()">取消订阅</button>
 	<button onclick="publishMsg()">发布消息</button>
