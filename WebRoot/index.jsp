@@ -30,8 +30,8 @@
 }
 
 img {
-	width: 50px;
-	height: 50px;
+	width: 80px;
+	height: 80px;
 	border-radius: 50%;
 	margin-right: 10px;
 	margin-top: 10px;
