@@ -15,12 +15,12 @@
     <!-- 一个tag标记对应一个自定义标签 -->
 	<tag>
 	    <!-- 时间格式化 -->
-        <description>这个标签的作用是时间格式化</description>
+        <description>时间格式化</description>
          <!-- 
                 为标签处理器类配一个标签名，在Jsp页面中使用标签时是通过标签名来找到要调用的标签处理器类的
                  通过viewIP就能找到对应的me.gacl.web.tag.ViewIPTag类
           -->
-		<name>showUserInfo</name>
+		<name>formatTime</name>
 		<!-- 标签对应的处理器类-->
 		<tag-class>com.yf.tag.MyJstlTag</tag-class>
 		<body-content>empty</body-content>
@@ -29,5 +29,11 @@
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 		</attribute>
+	</tag>
+	<tag>
+	  <description>获取访问者IP地址</description>
+	  <name>showIp</name>
+	  <tag-class>com.yf.tag.RemoterJstlTag</tag-class>
+	  <body-content>empty</body-content>
 	</tag>
 </taglib>

@@ -5,10 +5,28 @@
         <servlet-name>WebSocket</servlet-name>
         <servlet-class>com.yf.main.MySocketServlet</servlet-class>
     </servlet>
+  <servlet>
+    <servlet-name>PayServlet</servlet-name>
+    <servlet-class>com.yf.main.PayServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GanServlet</servlet-name>
+    <servlet-class>com.yf.main.GanServlet</servlet-class>
+  </servlet>
+
+
     <servlet-mapping>
         <servlet-name>WebSocket</servlet-name>
         <url-pattern>/socket</url-pattern>
     </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PayServlet</servlet-name>
+    <url-pattern>/pay</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GanServlet</servlet-name>
+    <url-pattern>/gan</url-pattern>
+  </servlet-mapping>
     
     <jsp-config>
       <taglib>
@@ -16,5 +34,15 @@
          <taglib-location>/WEB-INF/mytag.tld</taglib-location>
       </taglib>
     </jsp-config>
+    
+    <error-page>
+      <error-code>404</error-code>
+      <location>/tag.jsp</location>
+    </error-page>
+    
+    <welcome-file-list>
+        <welcome-file>/chat.jsp</welcome-file>
+    </welcome-file-list>
+    
     
 </web-app>

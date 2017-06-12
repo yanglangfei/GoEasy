@@ -29,9 +29,7 @@ public class ClimbUtils {
 			}
 		}
 		Request request = new Request.Builder().get().url(url)
-		/*
-		 * .put(body.build()) .patch(body.build())
-		 */
+		// .put(body.build()) .patch(body.build())
 		.build();
 		Response response = client.newCall(request).execute();
 		if (response.isSuccessful()) {

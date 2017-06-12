@@ -20,10 +20,21 @@
 <meta http-equiv="description" content="This is my page">
 <style>
 #area {
-	width: 800px;
-	height: 800px;
+	width: 1000px;
+	height: 1000px;
 	border: 1px red solid;
 	margin-top: 10px;
+}
+.adv,img{
+   width: 100px;
+   height: 100px;
+   /* background: url("images/skin6.jpg");  */
+   /* background-repeat: no-repeat;
+   background-size:cover; */
+   position: absolute;
+   position:fixed;
+   top: 45%;
+   right: 10px;
 }
 </style>
 </head>
@@ -32,9 +43,12 @@
 	<input type="text">
 	<button >发送</button>
 	<div id="area">
-	    
 	
+	</div>
 	
+	<!-- 广告区域  链接进入第三方网站 -->
+	<div   class="adv" >
+	   <a href="sex.html"><img alt="色情广告" src="images/skin6.jpg"></a>
 	</div>
 	
 	<script type="text/javascript">
@@ -45,7 +59,9 @@
 		var websocket = new WebSocket(wsUri);
 		websocket.onopen = function() {
 			//连接上server
-			alert("open");
+			var newDiv=document.createElement("div");
+			newDiv.innerHTML="连接成功...";
+			div.appendChild(newDiv);
 		};
 		websocket.onmessage = function(msg) {
 			var newDiv=document.createElement("div");

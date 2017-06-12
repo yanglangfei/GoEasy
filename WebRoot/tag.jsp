@@ -18,16 +18,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
   </head>
-  
   <body>
   <%
      SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
      String date=sdf.format(new Date());
    %>
-  
       当前时间是(使用java代码):<%=date %>  <br>
-      当前时间(使用自定义标签)：<dateFormat:showUserInfo/>
+      当前时间(使用自定义标签)：<dateFormat:formatTime/><br>
+      当前IP:<dateFormat:showIp/>
   </body>
 </html>
