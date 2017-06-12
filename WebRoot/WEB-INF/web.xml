@@ -10,4 +10,11 @@
         <url-pattern>/socket</url-pattern>
     </servlet-mapping>
     
+    <jsp-config>
+      <taglib>
+          <taglib-uri>/dateTag</taglib-uri>
+         <taglib-location>/WEB-INF/mytag.tld</taglib-location>
+      </taglib>
+    </jsp-config>
+    
 </web-app>
