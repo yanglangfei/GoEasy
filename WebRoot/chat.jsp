@@ -92,9 +92,12 @@
 			if(e.ctrlKey&&(e.key=="n"||e.key=="N")){
 			   return false;
 			}
-			
-			
 		};
+		document.onscroll=function(e){
+		   //滚动事件
+		   console.log(e);
+		};
+		
 	</script>
 </body>
 </html>

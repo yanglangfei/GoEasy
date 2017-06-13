@@ -3,7 +3,8 @@ package com.yf.model;
 import java.io.Serializable;
 
 public class User implements Serializable,Comparable<User>{
-	
+	private static final long serialVersionUID = 1L;
+
 	private int id;
 	
 	private String name;
