@@ -14,7 +14,7 @@ import com.yf.utils.ClimbUtils;
 
 public class GanServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private String url="http://gank.io/api/data/르적/10/1";
+	private String url="http://gank.io/api/data/르적";
 	private Map<String, String> param=new HashMap<>();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -23,7 +23,11 @@ public class GanServlet extends HttpServlet {
 		response.addHeader("Access-Control-Allow-Origin","*");
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String res = ClimbUtils.get(url, null, null);
+		String month=request.getParameter("month");
+		String day=request.getParameter("day");
+		String path = url+"/"+month+"/"+day;
+		System.out.println(path);
+		String res = ClimbUtils.get(path, null, null);
 		out.print(res);
 		out.flush();
 		out.close();
