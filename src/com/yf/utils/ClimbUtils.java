@@ -1,6 +1,9 @@
 package com.yf.utils;
+
 import java.io.IOException;
 import java.util.Map;
+import java.util.UUID;
+
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -28,9 +31,17 @@ public class ClimbUtils {
 				body.add(enty.getKey(), enty.getValue());
 			}
 		}
-		Request request = new Request.Builder().get().url(url)
-		// .put(body.build()) .patch(body.build())
-		.build();
+		Request request = new Request.Builder().get()
+				.url(url)
+				// .put(body.build()) .patch(body.build())
+				.addHeader("Accept",
+						"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8")
+                .addHeader("Accept-Encoding", "gzip, deflate, sdch, br")
+                .addHeader("Accept-Language", "zh-CN,zh;q=0.8")
+                .addHeader("Cookie", UUID.randomUUID().toString())
+                .addHeader("User-Agent", "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36")
+                
+				.build();
 		Response response = client.newCall(request).execute();
 		if (response.isSuccessful()) {
 			return response.body().string();
