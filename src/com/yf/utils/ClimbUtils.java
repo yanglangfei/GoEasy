@@ -14,7 +14,7 @@ public class ClimbUtils {
 	public static void main(String[] args) {
 		try {
 			String res = get(
-					"http://browse.renren.com/s/all?from=homeindex&q=ÎÞÁÄ&itab=11#qt=¹«Ö÷Á³/tindex=1",
+					"https://github.com/trending/java",
 					null, null);
 			System.out.println(res);
 		} catch (IOException e) {

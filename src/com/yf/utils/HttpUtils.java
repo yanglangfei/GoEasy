@@ -1,18 +1,15 @@
 package com.yf.utils;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
-import org.apache.http.HttpEntity;
+import org.apache.http.Header;
 import org.apache.http.HttpStatus;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.params.CookiePolicy;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
@@ -103,7 +100,7 @@ public class HttpUtils {
 	
 	
 	public static void main(String[] args) {
-		String res = get("http://www.baidu.com/", null);
+		String res = get("https://github.com/trending/java", null);
 		System.out.println(res);
 	}
 	
